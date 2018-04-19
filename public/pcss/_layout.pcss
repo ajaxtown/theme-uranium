@@ -58,3 +58,24 @@ aside {
         }
     }
 }
+main > div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    grid-gap: 12px;
+}
+@media (max-width: 768px) {
+    main > div {
+        grid-template-columns: auto;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    main > div {
+        grid-template-columns: auto auto;
+    }
+}
+@media (min-width: 991px) and (max-width: 1400px) {
+    main > div {
+        grid-template-columns: auto;
+    }
+}

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Article from "../components/Post/Article";
-import Loader from "../components/Loader";
-import SEO from "../components/SEO";
 import PropTypes from "prop-types";
-import OhSnap from "../components/OhSnap";
+import Article from "../components/Post/Article";
+import Loader from "client/helpers/Loader";
+import SEO from "client/helpers/SEO";
+import OhSnap from "client/helpers/OhSnap";
 import AdjacentPostsData from "shared/data-connectors/AdjacentPostsData";
 import SinglePostData from "shared/data-connectors/SinglePostData";
 

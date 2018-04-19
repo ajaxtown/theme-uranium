@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Dotdotdot from "react-dotdotdot";
 import moment from "moment";
 import LazyLoad from "./LazyLoad";
 
@@ -7,7 +8,7 @@ class ArticleListItem extends Component {
     render() {
         let href = `/${this.props.post.type}/${this.props.post.slug}`;
         return (
-            <div>
+            <div className="item">
                 {this.props.post.cover_image && (
                     <div className="post-thumbnail">
                         <Link to={href}>
@@ -33,7 +34,9 @@ class ArticleListItem extends Component {
                             </div>
                         </div>
                         <div className="post-content">
-                            <p>{this.props.post.excerpt}</p>
+                            <Dotdotdot clamp={"70px"}>
+                                {this.props.post.excerpt}
+                            </Dotdotdot>
                             <Link className="post-more" to={href}>
                                 Read more
                             </Link>

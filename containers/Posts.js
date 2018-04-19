@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import ArticleListItem from "../components/Post/ArticleListItem";
-import StackGrid from "react-stack-grid";
-import Loader from "../components/Loader";
+import Loader from "client/helpers/Loader";
 import config from "../../../../config";
-import Paginate from "../components/Paginate";
-import OhSnap from "../components/OhSnap";
+import Paginate from "client/helpers/Paginate";
+import OhSnap from "client/helpers/OhSnap";
 import WithResize from "./Hoc/WithResize";
 import PostsData from "shared/data-connectors/PostsData";
 
@@ -57,28 +56,10 @@ class Posts extends Component {
             gridWidth = "100%";
         }
 
-        const posts = (
-            <StackGrid
-                className="post-grid"
-                columnWidth={gridWidth}
-                gutterWidth={12}
-                gutterHeight={12}
-                enableSSR={true}
-                duration={0}
-                appearDelay={0}
-            >
-                {this.props.posts.map((post, i) => {
-                    return <ArticleListItem idx={i} key={i} post={post} />;
-                })}
-            </StackGrid>
-        );
-        {
-            /*<div className="post-row">
-            {this.props.posts.map((post, i) => {
-                return <ArticleListItem idx={i} key={i} post={post} />;
-            })}
-        </div>;*/
-        }
+        const posts = this.props.posts.map((post, i) => {
+            return <ArticleListItem idx={i} key={i} post={post} />;
+        });
+
         return (
             <Paginate
                 data={posts}

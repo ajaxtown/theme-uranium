@@ -1,6 +1,20 @@
 /*!------------------------------------------------------------------
 [Post]
 */
+.posts-page {
+    .item .card {
+        margin-bottom: 0px;
+    }
+    .post-content > div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        margin-bottom: 30px;
+        min-height: 72px;
+    }
+}
 .post-thumbnail img {
     width: 100%;
     max-width: none;

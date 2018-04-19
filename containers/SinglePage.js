@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Article from "../components/Post/Article";
-import Loader from "../components/Loader";
-import SEO from "../components/SEO";
-import OhSnap from "../components/OhSnap";
+import Loader from "client/helpers/Loader";
+import SEO from "client/helpers/SEO";
+import OhSnap from "client/helpers/OhSnap";
 import SinglePageData from "shared/data-connectors/SinglePageData";
 
 class SinglePage extends Component {
