@@ -20,33 +20,11 @@ class Navbar extends Component {
         let navbarStatus = this.state.navbarOpen ? " in" : "";
 
         return (
-            <div>
-                <div className="navbar-header">
-                    <button
-                        type="button"
-                        className="navbar-toggle collapsed"
-                        onClick={this.navbarToggle}
-                    >
-                        <span className="sr-only">Toggle navigation</span>
-                        <span className="icon-bar" />
-                        <span className="icon-bar" />
-                        <span className="icon-bar" />
-                    </button>
-                    <Link className="navbar-brand brand" to="/">
-                        {this.props.settings.site_title.value}
-                    </Link>
-
-                    <div className="about-site">
-                        {this.props.settings.sidebar_about.value}
-                    </div>
-                </div>
-
-                <div className={"collapse navbar-collapse" + navbarStatus}>
-                    <MenuVertical
-                        menu={JSON.parse(this.props.settings.menu.value)}
-                        router={this.props.router}
-                    />
-                </div>
+            <div className={"custom-menu"}>
+                <MenuVertical
+                    menu={JSON.parse(this.props.settings.menu.value)}
+                    router={this.props.router}
+                />
             </div>
         );
     }
