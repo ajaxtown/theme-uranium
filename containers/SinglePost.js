@@ -8,6 +8,13 @@ import AdjacentPostsData from "shared/data-connectors/AdjacentPostsData";
 import SinglePostData from "shared/data-connectors/SinglePostData";
 
 class SinglePost extends Component {
+    componentDidMount() {
+        document.body.classList.add("single", "single-post");
+    }
+
+    componentWillUnmount() {
+        document.body.classList.remove("single", "single-post");
+    }
     render() {
         if (this.props.loading || this.props.adjPostsLoading) {
             return <Loader />;

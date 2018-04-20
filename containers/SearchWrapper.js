@@ -23,9 +23,13 @@ export default class SearchWrapper extends Component {
             total: 0
         };
     }
-
     componentDidMount() {
         this.loadData();
+        document.body.classList.add("posts", "search-page");
+    }
+
+    componentWillUnmount() {
+        document.body.classList.remove("posts", "posts-page");
     }
 
     async loadData(num = 1) {
@@ -109,14 +113,12 @@ export default class SearchWrapper extends Component {
         }
         const type = this.props.type;
         return (
-            <div>
-                <Paginate
-                    data={posts}
-                    count={this.state.total}
-                    page={this.state.pageNo[type]}
-                    loadMore={this.loadData}
-                />
-            </div>
+            <Paginate
+                data={posts}
+                count={this.state.total}
+                page={this.state.pageNo[type]}
+                loadMore={this.loadData}
+            />
         );
     }
 }

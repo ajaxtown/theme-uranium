@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Sidebar from "../Sidebar";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import Search from "../../components/Sidebar/Search";
 
 require("../../public/pcss/client.pcss");
 
@@ -25,11 +26,11 @@ export default function Layout(Element, props) {
                         </div>
                     </nav>
                     <main>
-                        <Element {..._props} />
+                        <Search history={_props.history} />
+                        <div className="content-area">
+                            <Element {..._props} />
+                        </div>
                     </main>
-                    <aside>
-                        <Sidebar settings={settings} {...this.props} />
-                    </aside>
                 </div>
             );
         }

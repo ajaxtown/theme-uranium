@@ -10,25 +10,16 @@ main {
     grid-area: content;
 }
 
-aside {
-    grid-area: side;
-}
-
 .two-column {
     &.main {
         display: grid;
         grid-template-areas:
-            "header header header"
-            "nav content side"
-            "footer footer footer";
-        grid-template-columns: 250px 1fr 400px;
+            "header header"
+            "nav content"
+            "footer footer";
+        grid-template-columns: 250px 1fr;
         grid-template-rows: auto 1fr auto;
-        grid-gap: 16px;
         height: 100vh;
-
-        aside {
-            margin-right: 16px;
-        }
     }
 
     @media (max-width: 991px) {
@@ -37,45 +28,42 @@ aside {
                 "header"
                 "nav"
                 "content"
-                "side"
                 "footer";
 
             grid-template-columns: 1fr;
             grid-template-rows:
                 auto
                 minmax(75px, auto)
-                1fr
                 minmax(75px, auto)
                 auto; /* Footer */
             margin-top: -16px;
-            main {
-                margin: 0 16px;
-            }
-        }
-
-        aside {
-            display: none;
         }
     }
 }
-main > div {
+body.single {
+    main .content-area > div {
+        grid-gap: 0px;
+    }
+}
+main .content-area > div {
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 10px;
     grid-gap: 12px;
 }
+
 @media (max-width: 768px) {
-    main > div {
+    main > .content-area > div {
         grid-template-columns: auto;
     }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-    main > div {
+    main > .content-area > div {
         grid-template-columns: auto auto;
+        padding: 10px;
     }
 }
 @media (min-width: 991px) and (max-width: 1400px) {
-    main > div {
+    main > .content-area > div {
         grid-template-columns: auto;
     }
 }

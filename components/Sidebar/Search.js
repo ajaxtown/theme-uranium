@@ -31,22 +31,15 @@ export default class Search extends Component {
 
     render() {
         return (
-            <div className="card">
-                <div className="module-title">Search</div>
-                <div className="x_content">
-                    <div className="form-group">
-                        <input
-                            className="form-control"
-                            value={this.state.search}
-                            onChange={this.onChange}
-                            placeholder="Search the site"
-                            onKeyPress={e =>
-                                e.charCode === 13 && this.doSearch(e)
-                            }
-                            id="search-input"
-                        />
-                    </div>
-                </div>
+            <div className="card search-box">
+                <input
+                    className="form-control"
+                    value={this.state.search}
+                    onChange={this.onChange}
+                    placeholder="Search the site"
+                    onKeyPress={e => e.charCode === 13 && this.doSearch(e)}
+                    id="search-input"
+                />
             </div>
         );
     }

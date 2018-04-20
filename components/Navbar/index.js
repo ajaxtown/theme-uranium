@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import MenuVertical from "./MenuVertical";
-import MenuHorizontal from "./MenuHorizontal";
+import About from "../Sidebar/About";
 
 class Navbar extends Component {
     constructor(props) {
@@ -11,6 +11,7 @@ class Navbar extends Component {
             navbarOpen: false
         };
     }
+
     navbarToggle() {
         this.setState({ navbarOpen: !this.state.navbarOpen });
     }
@@ -34,6 +35,10 @@ class Navbar extends Component {
                     <Link className="navbar-brand brand" to="/">
                         {this.props.settings.site_title.value}
                     </Link>
+
+                    <div className="about-site">
+                        {this.props.settings.sidebar_about.value}
+                    </div>
                 </div>
 
                 <div className={"collapse navbar-collapse" + navbarStatus}>

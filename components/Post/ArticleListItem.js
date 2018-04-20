@@ -6,15 +6,16 @@ import LazyLoad from "./LazyLoad";
 
 class ArticleListItem extends Component {
     render() {
-        let href = `/${this.props.post.type}/${this.props.post.slug}`;
+        const post = this.props.post;
+        let href = `/${post.type}/${post.slug}`;
         return (
             <div className="item">
-                {this.props.post.cover_image && (
+                {post.cover_image && (
                     <div className="post-thumbnail">
                         <Link to={href}>
                             <img
                                 className="lazy-image"
-                                data-src={this.props.post.cover_image}
+                                data-src={post.cover_image}
                                 alt={this.props.title}
                                 src="/uploads/loading.jpg"
                             />
@@ -24,19 +25,28 @@ class ArticleListItem extends Component {
                 <div className="card">
                     <article className="post">
                         <div className="post-header">
-                            <h2 className="post-title font-alt">
-                                <Link to={href}>{this.props.post.title}</Link>
-                            </h2>
                             <div className="post-meta">
-                                {moment(
-                                    new Date(this.props.post.created_at)
-                                ).format("LL")}
+                                {moment(new Date(post.created_at)).format("LL")}
                             </div>
+                            <h2 className="post-title font-alt">
+                                <Link to={href}>{post.title}</Link>
+                            </h2>
                         </div>
                         <div className="post-content">
-                            <Dotdotdot clamp={"70px"}>
-                                {this.props.post.excerpt}
-                            </Dotdotdot>
+                            <Dotdotdot clamp={"70px"}>{post.excerpt}</Dotdotdot>
+                        </div>
+                        <div className="post-footer">
+                            <div className="post-author">
+                                {post.author.avatar && (
+                                    <div className="post-avatar">
+                                        <img src={post.author.avatar} />
+                                    </div>
+                                )}
+                                <span className="author-name">
+                                    {post.author.fname} {post.author.lname}
+                                </span>
+                            </div>
+
                             <Link className="post-more" to={href}>
                                 Read more
                             </Link>

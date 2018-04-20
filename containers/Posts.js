@@ -18,12 +18,12 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        document.body.classList.add("posts-page");
+        document.body.classList.add("posts", "posts-page");
         this.props.setResizeTracker(".post-grid");
     }
 
     componentWillUnmount() {
-        document.body.classList.remove("posts-page");
+        document.body.classList.remove("posts", "posts-page");
     }
     async loadMore(num) {
         let result = await this.props.fetchMore({
@@ -50,12 +50,6 @@ class Posts extends Component {
                 <OhSnap message={this.props.settings.text_posts_empty.value} />
             );
         }
-        let windowWidth = this.props.clientWidth;
-        let gridWidth = "50%";
-        if (windowWidth < 600) {
-            gridWidth = "100%";
-        }
-
         const posts = this.props.posts.map((post, i) => {
             return <ArticleListItem idx={i} key={i} post={post} />;
         });
