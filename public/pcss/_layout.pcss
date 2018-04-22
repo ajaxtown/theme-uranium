@@ -71,19 +71,20 @@ body.single {
         grid-gap: 0px;
     }
 }
-main .content-area > div {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 12px;
-}
-
-@media (max-width: 991px) {
-    main > .content-area > div {
-        grid-template-columns: auto auto;
+body.posts {
+    .content-area > div {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 12px;
     }
-}
-@media (max-width: 768px) {
-    main > .content-area > div {
-        grid-template-columns: auto;
+    @media (max-width: 991px) {
+        .content-area > div {
+            grid-template-columns: auto auto;
+        }
+    }
+    @media (max-width: 768px) {
+        .content-area > div {
+            grid-template-columns: auto;
+        }
     }
 }

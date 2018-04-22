@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Dotdotdot from "react-dotdotdot";
 import moment from "moment";
 import LazyLoad from "./LazyLoad";
+import { makeUrl } from "shared/util";
 
 class ArticleListItem extends Component {
     render() {

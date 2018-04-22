@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Article from "../components/Post/Article";
+import AdjacentPosts from "../components/Post/AdjacentPosts";
 import Loader from "client/helpers/Loader";
 import SEO from "client/helpers/SEO";
 import OhSnap from "client/helpers/OhSnap";
-import AdjacentPostsData from "shared/data-connectors/AdjacentPostsData";
 import SinglePostData from "shared/data-connectors/SinglePostData";
 
 class SinglePost extends Component {
@@ -47,17 +47,14 @@ class SinglePost extends Component {
                     image={this.props.post.cover_image}
                     settings={this.props.settings || {}}
                 />
-                <Article
-                    post={this.props.post}
-                    adjacentPosts={this.props.adjacentPosts}
-                />
+                <Article post={this.props.post} />
+                <AdjacentPosts slug={this.props.post.slug} />
             </div>
         );
     }
 }
 
 SinglePost.propTypes = {
-    post: PropTypes.object,
-    adjacentPosts: PropTypes.object
+    post: PropTypes.object
 };
-export default AdjacentPostsData(SinglePostData(SinglePost));
+export default SinglePostData(SinglePost);

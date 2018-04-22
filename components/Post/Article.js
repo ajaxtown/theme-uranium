@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import AdjacentPosts from "./AdjacentPosts";
 
 export default class Article extends Component {
     render() {
@@ -58,11 +57,6 @@ export default class Article extends Component {
                         <div className="tags font-serif  p-t-30">
                             {categories}
                         </div>
-                        {this.props.adjacentPosts && (
-                            <AdjacentPosts
-                                adjacentPosts={this.props.adjacentPosts}
-                            />
-                        )}
                     </article>
                 </div>
             </div>
