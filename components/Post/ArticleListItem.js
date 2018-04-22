@@ -4,6 +4,7 @@ import Dotdotdot from "react-dotdotdot";
 import moment from "moment";
 import LazyLoad from "./LazyLoad";
 import { makeUrl } from "shared/util";
+import config from "config";
 
 class ArticleListItem extends Component {
     render() {
@@ -16,9 +17,9 @@ class ArticleListItem extends Component {
                         <Link to={href}>
                             <img
                                 className="lazy-image"
-                                data-src={post.cover_image}
+                                data-src={config.baseName + post.cover_image}
                                 alt={this.props.title}
-                                src="/uploads/loading.jpg"
+                                src={config.baseName + "/uploads/loading.jpg"}
                             />
                         </Link>
                     </div>
@@ -40,7 +41,12 @@ class ArticleListItem extends Component {
                             <div className="post-author">
                                 {post.author.avatar && (
                                     <div className="post-avatar">
-                                        <img src={post.author.avatar} />
+                                        <img
+                                            src={
+                                                config.baseName +
+                                                post.author.avatar
+                                            }
+                                        />
                                     </div>
                                 )}
                                 <span className="author-name">

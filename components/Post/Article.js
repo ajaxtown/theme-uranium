@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import config from "config";
 
 export default class Article extends Component {
     render() {
@@ -28,7 +29,7 @@ export default class Article extends Component {
                 <div className="post-thumbnail">
                     <img
                         width="100"
-                        src={post.cover_image}
+                        src={config.baseName + post.cover_image}
                         alt={this.props.title}
                     />
                 </div>
@@ -59,7 +60,9 @@ export default class Article extends Component {
                         </div>
                         <div className="author-info">
                             <div className="author-avatar">
-                                <img src={post.author.avatar} />
+                                <img
+                                    src={config.baseName + post.author.avatar}
+                                />
                             </div>
                             <div className="author-details">
                                 <div className="author-name">

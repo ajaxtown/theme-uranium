@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import config from "config";
 
 const Item = ({ style, post }) => {
     return (
         <li style={style.item}>
             <div style={style.imageWrapper}>
-                <Link to={`/${post.type}/${post.slug}`}>
-                    <img style={style.image} src={post.cover_image} />
+                <Link to={config.baseName + `/${post.type}/${post.slug}`}>
+                    <img
+                        style={style.image}
+                        src={config.baseName + post.cover_image}
+                    />
                 </Link>
             </div>
             <div className="content" style={style.content}>
