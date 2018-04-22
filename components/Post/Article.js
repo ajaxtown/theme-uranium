@@ -57,6 +57,19 @@ export default class Article extends Component {
                         <div className="tags font-serif  p-t-30">
                             {categories}
                         </div>
+                        <div className="author-info">
+                            <div className="author-avatar">
+                                <img src={post.author.avatar} />
+                            </div>
+                            <div className="author-details">
+                                <div className="author-name">
+                                    {post.author.fname} {post.author.lname}
+                                </div>
+                                <div className="author-bio">
+                                    {post.author.bio}
+                                </div>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
