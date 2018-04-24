@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Sidebar from "../Sidebar";
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Search from "client/helpers/Search";
+import Header from "../../components/Header";
 
 require("../../public/pcss/client.pcss");
 
@@ -49,21 +49,10 @@ export default function Layout(Element, props) {
             const classes = this.state.sidebarOpen ? "" : " collapsed";
             return (
                 <div className={"main two-column" + classes}>
-                    <header>
-                        <button
-                            type="button"
-                            className="navbar-toggle collapsed"
-                            onClick={this.sidebarToggle}
-                        >
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar" />
-                            <span className="icon-bar" />
-                            <span className="icon-bar" />
-                        </button>
-                        <Link className="navbar-brand brand" to="/">
-                            {settings.site_title.value}
-                        </Link>
-                    </header>
+                    <Header
+                        sidebarToggle={this.sidebarToggle}
+                        settings={settings}
+                    />
                     <nav className="navbar navbar-custom">
                         <div className="sidebar">
                             <div className="about-site">

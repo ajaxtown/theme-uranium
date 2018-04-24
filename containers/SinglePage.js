@@ -7,11 +7,11 @@ import SinglePageData from "shared/data-connectors/SinglePageData";
 
 class SinglePage extends Component {
     componentDidMount() {
-        document.body.classList.add("single single-page");
+        document.body.classList.add("single", "single-page");
     }
 
     componentWillUnmount() {
-        document.body.classList.remove("single single-page");
+        document.body.classList.remove("single", "single-page");
     }
     render() {
         if (this.props.loading) {

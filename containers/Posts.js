@@ -60,6 +60,8 @@ class Posts extends Component {
                 count={this.props.total}
                 page={this.page}
                 loadMore={this.loadMore}
+                useWindow={false}
+                threshold={10}
             />
         );
     }
