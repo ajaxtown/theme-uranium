@@ -109,7 +109,9 @@ export default class SearchWrapper extends Component {
         ));
 
         if (posts.length === 0) {
-            return <OhSnap message="wow" />;
+            return (
+                <OhSnap message="Sorry, we could find anything related to that search" />
+            );
         }
         const type = this.props.type;
         return (
