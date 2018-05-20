@@ -47,8 +47,13 @@ class SinglePost extends Component {
                     image={this.props.post.cover_image}
                     settings={this.props.settings || {}}
                 />
-                <Article post={this.props.post} />
-                <AdjacentPosts slug={this.props.post.slug} />
+                <Article
+                    post={this.props.post}
+                    settings={this.props.settings}
+                    adjacentPosts={
+                        <AdjacentPosts slug={this.props.post.slug} />
+                    }
+                />
             </div>
         );
     }
