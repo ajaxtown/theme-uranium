@@ -1,7 +1,7 @@
 {
     "name": "Uranium",
-    "description": "A theme for writing classic blogs",
-    "author": "Abhishek Saha",
-    "thumbnail":
-        "http://hdwallpaperfx.com/wp-content/uploads/2016/02/Minimal-Elephant.jpg"
+    "description":
+        "A theme with a grid layout and infinite loading posts. Has integration with disqus for comments. SEO friendly and highly optimised.",
+    "author": "Redsnow",
+    "thumbnail": "/images/thumbnail.png"
 }
