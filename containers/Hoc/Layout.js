@@ -9,7 +9,6 @@ require("../../public/pcss/client.pcss");
 
 export default function Layout(Element, props) {
     const settings = props.settings;
-    const layout = settings.layout_display.value;
 
     return class extends Component {
         constructor(props) {

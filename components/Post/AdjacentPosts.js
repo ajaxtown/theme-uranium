@@ -37,10 +37,8 @@ const Post = ({ post, label, direction }) => {
     );
 };
 
-const AdjacentPosts = ({ adjacentPosts, loading }) => {
-    if (loading) {
-        return <span className="loader" />;
-    }
+const AdjacentPosts = ({ adjacentPosts }) => {
+    if (!adjacentPosts) return <div />;
     let prev = adjacentPosts.previous ? (
         <Post
             direction="previous"
