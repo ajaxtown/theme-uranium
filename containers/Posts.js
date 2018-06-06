@@ -55,14 +55,16 @@ class Posts extends Component {
         });
 
         return (
-            <Paginate
-                data={posts}
-                count={this.props.total}
-                page={this.page}
-                loadMore={this.loadMore}
-                useWindow={false}
-                threshold={10}
-            />
+            <div>
+                <div className="post-list">{posts}</div>
+                <Paginate
+                    data={posts}
+                    count={this.props.total}
+                    page={this.page}
+                    match={this.props.match}
+                    loadMore={this.loadMore}
+                />
+            </div>
         );
     }
 }

@@ -82,7 +82,7 @@ export default class SearchWrapper extends Component {
                 query: SEARCH_POSTS_BY_TAXONOMY,
                 variables: {
                     type: "post_tag",
-                    query: this.props.match.params.query,
+                    slug: this.props.match.params.query,
                     postType: "post",
                     limit: config.itemsPerPage,
                     offset: offset
@@ -115,12 +115,14 @@ export default class SearchWrapper extends Component {
         }
         const type = this.props.type;
         return (
-            <Paginate
-                data={posts}
-                count={this.state.total}
-                page={this.state.pageNo[type]}
-                loadMore={this.loadData}
-            />
+            <div>
+                <div className="post-list">{posts}</div>
+                <Paginate
+                    count={this.state.total}
+                    page={this.state.pageNo[type]}
+                    match={this.props.match}
+                />
+            </div>
         );
     }
 }

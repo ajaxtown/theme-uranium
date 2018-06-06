@@ -60,12 +60,8 @@ export default class Article extends Component {
                                 <Link to="#">{post.title}</Link>
                             </h2>
                             <div className="post-meta">
-                                {moment(new Date(post.created_at)).format("LL")}
-                                {tags.length > 0 && (
-                                    <div className="tags font-serif  p-t-30">
-                                        {tags}
-                                    </div>
-                                )}
+                                {moment(new Date(post.created_at)).format("LL")}{" "}
+                                · {categories}
                             </div>
                         </div>
                         <div className="post-content ql-editor fs-medium">
@@ -75,9 +71,9 @@ export default class Article extends Component {
                                 }}
                             />
                         </div>
-                        <div className="tags font-serif  p-t-30">
-                            {categories}
-                        </div>
+                        {tags.length > 0 && (
+                            <div className="tags p-t-30">{tags}</div>
+                        )}
                         {displayAuthor &&
                             post.type == "post" && (
                                 <div className="author-info">

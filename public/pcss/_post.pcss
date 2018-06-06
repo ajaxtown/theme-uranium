@@ -13,6 +13,7 @@
     .post-thumbnail img {
         max-height: 500px;
         object-fit: cover;
+        width: 100%;
     }
     @media (max-width: 991px) {
         .post-thumbnail img {
@@ -77,14 +78,17 @@
             }
         }
     }
+    .post-thumbnail img {
+        width: 100%;
+        max-width: none;
+        height: 250px;
+        object-fit: cover;
+    }
     .post {
         margin-bottom: 0px;
     }
 }
-.post-thumbnail img {
-    width: 100%;
-    max-width: none;
-}
+
 .hljs code {
     line-height: 2.5rem !important;
 }
@@ -180,5 +184,17 @@
             margin-left: 0;
             margin-right: 0;
         }
+    }
+}
+
+.pagination {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    .active {
+        background: #eee;
+        color: #000;
     }
 }

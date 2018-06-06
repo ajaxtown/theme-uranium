@@ -50,18 +50,18 @@ body.single {
     overflow: auto;
 }
 body.posts {
-    .content-area > div {
+    .content-area .post-list {
         display: grid;
         grid-template-columns: auto auto auto;
         grid-gap: 12px;
     }
     @media (max-width: 991px) {
-        .content-area > div {
+        .content-area .post-list {
             grid-template-columns: auto auto;
         }
     }
     @media (max-width: 768px) {
-        .content-area > div {
+        .content-area .post-list {
             grid-template-columns: auto;
         }
     }
