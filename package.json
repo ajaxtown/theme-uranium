@@ -1,0 +1,9 @@
+{
+    "name": "uranium",
+    "version": "1.0.0",
+    "description": "Uranium Theme for Letterpad",
+    "author": "Abhishek Saha <abhisheksaha11@gmail.com>",
+    "dependencies": {
+        "intersection-observer": "*"
+    }
+}

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import Sidebar from "../Sidebar";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Search from "client/helpers/Search";
 import Header from "../../components/Header";
 
+if (typeof window !== "undefined") {
+    require("intersection-observer");
+}
 require("../../public/pcss/client.pcss");
 
 export default function Layout(Element, props) {
