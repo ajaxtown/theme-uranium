@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { graphql } from "react-apollo";
 import ArticleListItem from "../components/Post/ArticleListItem";
-import appoloClient from "../../../apolloClient";
+import appoloClient from "shared/apolloClient";
 import config from "../../../../config";
 import Loader from "client/helpers/Loader";
 import { SEARCH_POSTS_BY_TAXONOMY, SEARCH_POSTS } from "shared/queries/Queries";
@@ -36,7 +35,7 @@ export default class SearchWrapper extends Component {
         const term = this.props.type;
         const offset = (num - 1) * config.itemsPerPage;
         if (term === "post") {
-            let result = await appoloClient.query({
+            let result = await appoloClient().query({
                 query: SEARCH_POSTS,
                 variables: {
                     query:
@@ -55,7 +54,7 @@ export default class SearchWrapper extends Component {
                 }
             });
         } else if (term === "category") {
-            let result = await appoloClient.query({
+            let result = await appoloClient().query({
                 query: SEARCH_POSTS_BY_TAXONOMY,
                 variables: {
                     type: "post_category",
@@ -78,7 +77,7 @@ export default class SearchWrapper extends Component {
                 }
             });
         } else if (term === "tag") {
-            let result = await appoloClient.query({
+            let result = await appoloClient().query({
                 query: SEARCH_POSTS_BY_TAXONOMY,
                 variables: {
                     type: "post_tag",
