@@ -46,6 +46,9 @@
     }
 }
 .posts {
+    .content-area {
+        padding: 14px;
+    }
     .item .card {
         margin-bottom: 0px;
     }
@@ -192,9 +195,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    > li > a {
+        color: #333;
+        background-color: initial;
+        border-color: #484747;
+
+        &:hover {
+            background-color: #484747;
+            border: 1px solid #4b4b4b;
+            color: #e8e7e7;
+        }
+    }
     .active {
-        background: #eee;
-        color: #000;
+        background-color: #484747;
+        border: 1px solid #4b4b4b;
+        color: #e8e7e7;
     }
 }

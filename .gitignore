@@ -1,2 +1,2 @@
-public/dist/*.map
-public/public/hot
+public/dist
+public/public

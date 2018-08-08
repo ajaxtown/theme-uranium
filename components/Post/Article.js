@@ -5,11 +5,6 @@ import config from "config";
 import Disqus from "disqus-react";
 
 export default class Article extends Component {
-    componentDidMount() {
-        setTimeout(() => {
-            document.querySelectorAll(".hljs").forEach(hljs.highlightBlock);
-        }, 10);
-    }
     render() {
         const tags = [];
         const categories = [];

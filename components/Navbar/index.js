@@ -1,20 +1,14 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import MenuVertical from "./MenuVertical";
-import About from "../Sidebar/About";
 
 class Navbar extends Component {
-    constructor(props) {
-        super(props);
-        this.navbarToggle = this.navbarToggle.bind(this);
-        this.state = {
-            navbarOpen: false
-        };
-    }
+    state = {
+        navbarOpen: false
+    };
 
-    navbarToggle() {
+    navbarToggle = () => {
         this.setState({ navbarOpen: !this.state.navbarOpen });
-    }
+    };
 
     render() {
         let navbarStatus = this.state.navbarOpen ? " in" : "";

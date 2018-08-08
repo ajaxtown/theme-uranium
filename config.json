@@ -1,5 +1,6 @@
 {
     "name": "Uranium",
+    "short_name": "uranium",
     "description":
         "A theme with a grid layout and infinite loading posts. Has integration with disqus for comments. SEO friendly and highly optimised.",
     "author": "Redsnow",
